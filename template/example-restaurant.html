@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- =================================================================== -->
+<!-- EDIT THESE TWO LINES PER CLIENT (for Google search results)         -->
+<title>Casa Verde Tacos — Authentic Tacos in Austin, TX</title>
+<meta name="description" content="Casa Verde Tacos serves fresh, authentic street tacos in Austin. Dine in, take out, or order ahead. Open daily — see our menu and hours.">
+<!-- =================================================================== -->
+
+<script>
+/* ===================================================================
+   CLIENT CONFIG — This is the ONLY block you normally edit per client.
+   Change the values, save, refresh. Everything updates automatically.
+   =================================================================== */
+const CONFIG = {
+  business:   "Casa Verde Tacos",
+  tagline:    "Authentic Street Tacos, Made Fresh Daily",
+  subtagline: "Family recipes, local ingredients, and the best salsa in Austin. Dine in, take out, or order ahead.",
+
+  phone:      "(555) 987-6543",       // shown + click-to-call
+  phoneRaw:   "+15559876543",         // digits only, for the tel: link
+  email:      "hola@casaverdetacos.com",
+  address:    "456 South Congress Ave, Austin, TX 78704",
+
+  // Brand colors (any CSS color / hex)
+  primary:    "#c0392b",   // main brand color (buttons, headers)
+  accent:     "#27ae60",   // call-to-action highlight
+  dark:       "#2c1810",
+
+  // Hours — leave a day blank ("") to show "Closed"
+  hours: {
+    "Monday":    "11:00 AM – 9:00 PM",
+    "Tuesday":   "11:00 AM – 9:00 PM",
+    "Wednesday": "11:00 AM – 9:00 PM",
+    "Thursday":  "11:00 AM – 9:00 PM",
+    "Friday":    "11:00 AM – 11:00 PM",
+    "Saturday":  "11:00 AM – 11:00 PM",
+    "Sunday":    "12:00 PM – 8:00 PM"
+  },
+
+  // About paragraph
+  about: "Casa Verde started as a food truck with one griddle and a family recipe book. " +
+         "Today we're proud to serve the neighborhood the same fresh, handmade tacos — " +
+         "tortillas pressed daily, salsas made from scratch, and meats marinated overnight. " +
+         "Come hungry.",
+
+  // Services (icon is any emoji; keep it simple)
+  services: [
+    { icon: "🌮", title: "Street Tacos",   desc: "Al pastor, carnitas, barbacoa, and veggie — on handmade tortillas." },
+    { icon: "🥑", title: "Fresh Salsas",   desc: "Five salsas made daily, from mild verde to roasted habanero." },
+    { icon: "🥤", title: "Aguas Frescas",  desc: "Horchata, jamaica, and seasonal fruit waters made in house." },
+    { icon: "🛍️", title: "Take Out",       desc: "Call ahead and your order's hot and ready when you arrive." },
+    { icon: "🎉", title: "Catering",       desc: "Taco bars for parties, offices, and events of any size." },
+    { icon: "🌶️", title: "Daily Specials", desc: "Ask about today's special plate — it changes with the season." }
+  ],
+
+  // Reviews — pull these straight from their Google/Facebook reviews
+  reviews: [
+    { text: "Best tacos in Austin, hands down. The al pastor is unreal.", name: "Marcus L." },
+    { text: "Fresh, fast, and the salsa bar is incredible. We come every week.", name: "Priya S." },
+    { text: "Catered our office party — everyone raved. Will book again!", name: "Tom B." }
+  ],
+
+  // Photos — replace with client/Unsplash image URLs, or leave [] to hide gallery
+  gallery: [
+    "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=600&q=80",
+    "https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?w=600&q=80",
+    "https://images.unsplash.com/photo-1599974579688-8dbdd335c77f?w=600&q=80"
+  ],
+
+  // Google Maps embed: search the address on Google Maps → Share → Embed → copy the
+  // src URL → paste here. Leave "" to hide the map.
+  mapEmbed: "",
+
+  // Social links — leave "" to hide
+  facebook:  "",
+  instagram: ""
+};
+</script>
+
+<style>
+  :root { --primary:#1a5fb4; --accent:#ff8c00; --dark:#1c2733; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body { font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+         color:#222; line-height:1.6; }
+  img { max-width:100%; display:block; }
+  a { color:var(--primary); }
+  .wrap { max-width:1080px; margin:0 auto; padding:0 20px; }
+  .btn { display:inline-block; background:var(--accent); color:#fff; padding:14px 28px;
+         border-radius:8px; text-decoration:none; font-weight:700; font-size:1.05rem;
+         transition:transform .1s ease, filter .1s ease; }
+  .btn:hover { filter:brightness(1.08); transform:translateY(-1px); }
+  .btn-light { background:#fff; color:var(--primary); }
+
+  /* Header / nav */
+  header { background:var(--primary); color:#fff; position:sticky; top:0; z-index:50;
+           box-shadow:0 2px 8px rgba(0,0,0,.12); }
+  header .wrap { display:flex; align-items:center; justify-content:space-between; padding:14px 20px; }
+  .logo { font-weight:800; font-size:1.3rem; color:#fff; text-decoration:none; }
+  .nav-call { color:#fff; text-decoration:none; font-weight:700; background:rgba(255,255,255,.15);
+              padding:8px 16px; border-radius:6px; }
+  .nav-call:hover { background:rgba(255,255,255,.28); }
+
+  /* Hero */
+  .hero { background:linear-gradient(135deg,var(--primary),var(--dark)); color:#fff;
+          padding:80px 0; text-align:center; }
+  .hero h1 { font-size:2.6rem; line-height:1.15; margin-bottom:16px; }
+  .hero p { font-size:1.2rem; opacity:.92; max-width:640px; margin:0 auto 28px; }
+  .hero .btn { margin:6px; }
+
+  /* Sections */
+  section { padding:64px 0; }
+  section h2 { font-size:2rem; text-align:center; margin-bottom:8px; color:var(--dark); }
+  .section-sub { text-align:center; color:#666; margin-bottom:40px; }
+  .alt { background:#f5f7fa; }
+
+  /* Services grid */
+  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:22px; }
+  .card { background:#fff; border:1px solid #e6e9ee; border-radius:12px; padding:28px;
+          box-shadow:0 2px 6px rgba(0,0,0,.04); }
+  .card .icon { font-size:2.2rem; margin-bottom:10px; }
+  .card h3 { margin-bottom:8px; color:var(--dark); }
+  .card p { color:#555; }
+
+  /* About + hours layout */
+  .two-col { display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:start; }
+  .hours-table { width:100%; border-collapse:collapse; }
+  .hours-table td { padding:10px 0; border-bottom:1px solid #e6e9ee; }
+  .hours-table td:last-child { text-align:right; font-weight:600; }
+  .closed { color:#b00; }
+
+  /* Reviews */
+  .reviews { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:22px; }
+  .review { background:#fff; border-radius:12px; padding:26px; border:1px solid #e6e9ee; }
+  .stars { color:#ffb400; font-size:1.1rem; margin-bottom:10px; }
+  .review .name { margin-top:14px; font-weight:700; color:var(--dark); }
+
+  /* Gallery */
+  .gallery { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:14px; }
+  .gallery img { border-radius:10px; height:220px; object-fit:cover; width:100%; }
+
+  /* Contact / CTA */
+  .cta { background:var(--dark); color:#fff; text-align:center; }
+  .cta h2 { color:#fff; }
+  .cta .phone-big { font-size:2.2rem; font-weight:800; color:#fff; text-decoration:none;
+                    display:inline-block; margin:14px 0; }
+  .contact-info { margin-top:18px; opacity:.9; }
+  .contact-info a { color:#fff; }
+  .map { margin-top:30px; }
+  .map iframe { width:100%; height:300px; border:0; border-radius:12px; }
+
+  /* Footer */
+  footer { background:#11171e; color:#9aa6b2; text-align:center; padding:28px 20px; font-size:.9rem; }
+  footer a { color:#cdd6df; }
+
+  /* Floating mobile call button */
+  .float-call { position:fixed; bottom:20px; right:20px; background:var(--accent); color:#fff;
+                width:60px; height:60px; border-radius:50%; display:none; align-items:center;
+                justify-content:center; font-size:1.6rem; text-decoration:none; z-index:60;
+                box-shadow:0 4px 14px rgba(0,0,0,.3); }
+
+  @media (max-width:760px) {
+    .hero h1 { font-size:2rem; }
+    .two-col { grid-template-columns:1fr; }
+    .float-call { display:flex; }
+    .nav-call { display:none; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a href="#" class="logo" id="logo"></a>
+    <a href="#" class="nav-call" id="navCall"></a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <h1 id="heroTitle"></h1>
+    <p id="heroSub"></p>
+    <a href="#" class="btn" id="heroCall"></a>
+    <a href="#contact" class="btn btn-light">Get a Free Quote</a>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Our Services</h2>
+    <p class="section-sub">Everything you need, done right the first time.</p>
+    <div class="grid" id="services"></div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap two-col">
+    <div>
+      <h2 style="text-align:left">About Us</h2>
+      <p id="about" style="margin-top:14px;color:#555"></p>
+    </div>
+    <div>
+      <h2 style="text-align:left">Hours</h2>
+      <table class="hours-table" id="hours" style="margin-top:14px"></table>
+    </div>
+  </div>
+</section>
+
+<section id="reviewsSection">
+  <div class="wrap">
+    <h2>What Our Customers Say</h2>
+    <p class="section-sub">Real reviews from real neighbors.</p>
+    <div class="reviews" id="reviews"></div>
+  </div>
+</section>
+
+<section class="alt" id="gallerySection">
+  <div class="wrap">
+    <h2>Our Work</h2>
+    <p class="section-sub">A look at recent jobs.</p>
+    <div class="gallery" id="gallery"></div>
+  </div>
+</section>
+
+<section class="cta" id="contact">
+  <div class="wrap">
+    <h2>Ready to Get Started?</h2>
+    <p>Call now for fast, friendly service — or send us a message.</p>
+    <a href="#" class="phone-big" id="ctaPhone"></a>
+    <div class="contact-info" id="contactInfo"></div>
+    <div class="map" id="mapWrap"></div>
+  </div>
+</section>
+
+<footer>
+  <div id="footerText"></div>
+  <div style="margin-top:8px">Site built by <a href="#">[Your Name]</a> · <a href="#">Get a website like this</a></div>
+</footer>
+
+<a href="#" class="float-call" id="floatCall" aria-label="Call now">📞</a>
+
+<script>
+/* ===== Render the page from CONFIG. You normally don't touch below here. ===== */
+(function(){
+  const C = CONFIG;
+  const tel = "tel:" + C.phoneRaw;
+
+  // theme colors
+  const r = document.documentElement.style;
+  r.setProperty('--primary', C.primary);
+  r.setProperty('--accent',  C.accent);
+  r.setProperty('--dark',    C.dark);
+
+  const set = (id, html) => { const el = document.getElementById(id); if (el) el.innerHTML = html; };
+  const link = (id) => { const el = document.getElementById(id); if (el) el.href = tel; };
+
+  set('logo', C.business);
+  set('navCall', '📞 ' + C.phone);  link('navCall');
+  set('heroTitle', C.tagline);
+  set('heroSub', C.subtagline);
+  set('heroCall', '📞 Call ' + C.phone); link('heroCall');
+  set('about', C.about);
+  set('ctaPhone', C.phone); link('ctaPhone');
+  link('floatCall');
+
+  // services
+  set('services', C.services.map(s =>
+    `<div class="card"><div class="icon">${s.icon}</div><h3>${s.title}</h3><p>${s.desc}</p></div>`
+  ).join(''));
+
+  // hours
+  const days = Object.entries(C.hours).map(([d,h]) =>
+    `<tr><td>${d}</td><td class="${h?'':'closed'}">${h||'Closed'}</td></tr>`
+  ).join('');
+  set('hours', days);
+
+  // reviews
+  if (C.reviews && C.reviews.length) {
+    set('reviews', C.reviews.map(rv =>
+      `<div class="review"><div class="stars">★★★★★</div><p>"${rv.text}"</p><div class="name">— ${rv.name}</div></div>`
+    ).join(''));
+  } else { document.getElementById('reviewsSection').style.display = 'none'; }
+
+  // gallery
+  if (C.gallery && C.gallery.length) {
+    set('gallery', C.gallery.map(src => `<img src="${src}" alt="${C.business} work" loading="lazy">`).join(''));
+  } else { document.getElementById('gallerySection').style.display = 'none'; }
+
+  // contact info
+  let ci = '';
+  if (C.address) ci += `📍 ${C.address}<br>`;
+  if (C.email)   ci += `✉️ <a href="mailto:${C.email}">${C.email}</a><br>`;
+  let social = [];
+  if (C.facebook)  social.push(`<a href="${C.facebook}">Facebook</a>`);
+  if (C.instagram) social.push(`<a href="${C.instagram}">Instagram</a>`);
+  if (social.length) ci += social.join(' · ');
+  set('contactInfo', ci);
+
+  // map
+  if (C.mapEmbed) set('mapWrap', `<iframe src="${C.mapEmbed}" loading="lazy" allowfullscreen></iframe>`);
+
+  // footer
+  set('footerText', `© ${new Date().getFullYear()} ${C.business}. All rights reserved.`);
+
+  // page title fallback if left default-ish (kept manual in <head> for SEO)
+})();
+</script>
+</body>
+</html>
